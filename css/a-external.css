@@ -1,0 +1,238 @@
+/*Global settings*/
+*,*::after,*::before{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+ }
+
+ html{
+    font-size: 62.5%;
+ }
+ 
+ body{
+    font-family: 'Cairo', sans-serif;
+ }
+
+  /* Background video */
+video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+
+ /*Main container*/
+ .container{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+ }
+
+
+ 
+/*logo*/
+ .logo{
+    width: 30px;
+    height: 30px;
+    margin: 0.5rem;
+}
+
+
+/*search box*/
+.search{
+    display: flex;
+    font-size: 1rem;
+    align-items: center;
+    margin: 0.5rem;
+}
+
+/* search box controls */
+.search > button{
+     position: relative;
+     top: 0;
+     left: -2px;
+     padding: 0.5rem 0.7rem;
+     border: none;
+     background-color:#003366;
+     border-radius: 2px;
+     color: white;
+     font-size: 1.6rem;
+    
+}
+
+.search > input{
+     padding: 0.5rem;
+     border: none;
+     border-radius: 2px;
+     font-size: 1.6rem;
+}
+
+/*Navigation bar*/
+.nav{
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0.2rem;
+    align-items: center;
+    font-size: 2rem;
+    flex-wrap: wrap;
+    background-color:#003366;
+    align-content: center;
+}
+
+/*Navigation link*/
+.nav > a:link, a:visited{
+    margin: 0.5rem;
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+    transition: all .4s;
+}
+
+/*Navigation link hover effect*/
+.nav > a:hover, a:active{
+    background-color:greenyellow;
+    padding: 0 0.8rem;
+    border-radius: 5px;
+    color:blue
+}
+
+
+ .search-bar{
+     position: relative; 
+     display: flex;
+     flex-direction: row;
+     background-color: black;
+     justify-content: space-between;
+ }
+
+ .main-content{
+     position: relative; 
+     background-color:rgba(0, 0, 0, 0.308);
+     color: white;
+     flex:1;
+    
+ }
+
+ 
+
+ .footer{
+    flex-direction: column;
+    background-color:#003366;
+    color: antiquewhite;
+    padding:0.5rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.6rem;
+ }
+
+
+  /* main content */
+.content{
+    font-size: 2rem;
+    padding:1.6rem;
+    padding-top: 4.5rem;
+}
+
+
+.content > P {
+    text-align: justify;
+}
+
+.content > h1 {
+    text-align: center;
+}
+
+/*Hide an element*/
+.hide{
+    display: none;
+}
+
+/*Menu Icon*/
+.menu-icon{
+    position: fixed;
+    display:none;
+    top:5rem;
+    right:1.6rem;
+    background-color:#003366be;
+    border-radius: 50%;
+    behavior: url(PIE.htc); /* IE8 */
+    padding: 1.5rem;
+    z-index: 3;
+    
+}
+
+.menu-icon > div{
+    width: 3rem;
+    height: 0.5rem;
+    background-color: white;
+    margin: 0.5rem;
+}
+
+/*Hide the check box*/
+#navigation-toggle{
+    display: none;
+}
+
+/*show the navigation when the menu-icon is checked*/
+#navigation-toggle:checked ~ .nav{
+    display: flex;
+}
+
+/*Change the icon position to relative when is checked*/
+#navigation-toggle:checked ~ .menu-icon{
+    position: absolute;
+}
+
+/*Hide the last icon element*/
+#navigation-toggle:checked ~ .menu-icon .last{
+    display: none;
+}
+
+/*Rotate the first icon element*/
+#navigation-toggle:checked ~ .menu-icon .first{
+    position: absolute;
+    top:1rem;
+    right:0.5rem;
+    transform: rotate(45deg);
+}
+
+/*Rotate the middle icon element*/
+#navigation-toggle:checked ~ .menu-icon .middle{
+    position: absolute;
+    top:1rem;
+    right:0.5rem;
+    transform: rotate(-45deg);
+}
+
+
+
+/*Media query for responsive design when the browser window is 890px wide or less*/
+@media only screen and (max-width: 890px) {
+      .nav{
+          display:none;
+          flex-direction: column;
+          align-items: flex-start;
+          align-content: flex-start;
+          padding-left: 1.6rem;
+          min-width: 50vw;
+      }
+      
+      .container{
+          min-width: 300px;
+      }
+
+      video{
+          height: 100%;
+          width: 100%;
+      }
+
+      .menu-icon{
+          display: block;
+      }
+}
