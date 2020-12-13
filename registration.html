@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    <script src="https://kit.fontawesome.com/c633517a59.js" crossorigin="anonymous"></script>
+    <title>Registration</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script/a-script.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/a-external.css">
+    <link rel="stylesheet" href="css/site.css"> 
+
+</head>
+
+<body>
+    <!--Main Container-->
+    <div class="container">
+        <!--Header-->
+        <div class="header">
+            <!--icon and search bar-->
+            <div class="search-bar">
+                <img class="logo" src="/images/Logo.png" alt="Logo" />
+                <div class="search">
+                    <input class="search-control" placeholder="search" />
+                    <button class="search-control"><i class="fas fa-search "></i></button>
+                </div>
+            </div>
+            <!-- Hidden checkbox to controll the menu icon-->
+            <input type="checkbox" class="navigation-toggle" id="navigation-toggle" />
+            <!--Menu Icon-->
+            <label for="navigation-toggle" class="menu-icon">
+                <div class="first"></div>
+                <div class="middle"></div>
+                <div class="last"></div>
+            </label>
+            <!--Navigation bar-->
+            <nav class="nav">
+                <a href="#"><i class="fas fa-home"></i> Home</a>
+                <a href="#"><i class="fas fa-gamepad"></i> Tournament</a>
+                <a href="#"><i class="fas fa-user-plus"></i> Register</a>
+                <a href="#"><i class="fas fa-poll-h"></i> Leaderboard</a>
+                <a href="#"> <i class="fas fa-question-circle"></i> Rules /FAQ</a>
+                <a id="login" href="#"><i class="fas fa-sign-in-alt "></i> Sign In</a>
+                <a class="hide" id="logout" href="#"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+            </nav>
+        </div>
+
+        <!--Content section-->
+        <div class="main-content">
+            <!--Background video-->
+            <video src="https://css-tricks-post-videos.s3.us-east-1.amazonaws.com/Island%20-%204141.mp4" autoplay loop
+                playsinline muted></video>
+            <div class="content">
+                <!--Main Title-->
+                <h1>Registration</h1>
+
+                <form action="order.html" method="get" novalidate>
+                    <div class="form-reg">
+
+                        <div class="form-group">
+                            <label for="Tournament">Choose a Tournament  ... </label>
+
+                            <select name="tournament" id="tournament">
+                                <option value="T1">Tournament 1, 14 Dec</option>
+                                <option value="T2">Tournament 1, 16 Dec</option>
+                                <option value="T3">Tournament 1, 18 Dec</option>
+                                <option value="T4">Tournament 1, 20 Dec</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="teamcaptain">Team Captain Name</label>
+                            <input type="text" class="form-control" id="teamcaptain" placeholder="Team Captain Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="trackeraccount">Call of Duty tracker account link</label>
+                            <input type="text" class="form-control" id="trackeraccount" placeholder="Call of Duty tracker account link">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="streamlink">Stream Link</label>
+                            <input type="text" class="form-control" id="streamlink" placeholder="Stream Link">
+                        </div>
+
+                        <button type="submit">Register!</button>
+                        
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+        <!--Footer section-->
+        <div class="footer">
+            <!--copyright text-->
+            <p>&copy; Copyright 2020 Group F</p>
+        </div>
+    </div>
+</body>
+
+</html>
