@@ -188,3 +188,9 @@ input[type=submit]:hover {
     padding-left: 2rem;
     color: rgb(180, 75, 75);
 }
+.content p > a{
+    padding: 1rem 5rem ;
+    text-decoration: none;
+    margin-top: 1rem;
+
+}
