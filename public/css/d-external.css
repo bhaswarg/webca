@@ -85,7 +85,7 @@ table {
     border: 1px;
 }
  .img-cont{
-    left: 50%;
+    
     align-self:center;
     align-items: center;
     display: flex;
@@ -195,3 +195,15 @@ input[type=submit]:hover {
     margin-top: 1rem;
 
 }
+
+
+/*Media query for responsive design when the browser window is 670px wide or less*/
+@media only screen and (max-width: 670px) {
+    .img-cont{
+       flex-direction: column;
+    }
+}
+
+
+
+
