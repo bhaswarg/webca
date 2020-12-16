@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Search Engine Optimization Tags-->
+    <meta name="title" content="Welcome to Game Time Tournaments">
+    <meta name="description" content="Call of Duty: Warzone AMATEUR TRIOS TOURNAMENT">
+    <meta name="keywords" content="Game  Tournament">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Optimal Internet Explorer compatibility -->
+    <script src="https://kit.fontawesome.com/c633517a59.js" crossorigin="anonymous"></script>
+    <title>Registration</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script/a-script.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/a-external.css">
+    <link rel="stylesheet" href="css/site.css">
+
+</head>
+
+<body>
+
+    <!--Main Container-->
+    <div class="container">
+        <!--Header-->
+        <div class="header">
+            <!--icon and search bar-->
+            <div class="search-bar">
+                <img class="logo" src="/images/logo.jpg" alt="Logo" />
+                <div class="search">
+                    <input class="search-control" placeholder="search" />
+                    <button class="search-control"><i class="fas fa-search "></i></button>
+                </div>
+            </div>
+            <!-- Hidden checkbox to controll the menu icon-->
+            <input type="checkbox" class="navigation-toggle" id="navigation-toggle" />
+            <!--Menu Icon-->
+            <label for="navigation-toggle" class="menu-icon">
+                <div class="first"></div>
+                <div class="middle"></div>
+                <div class="last"></div>
+            </label>
+            <!--Navigation bar-->
+            <nav class="nav">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="tournament.html"><i class="fas fa-gamepad"></i> Tournament</a>
+                <a href="registration.html"><i class="fas fa-user-plus"></i> Register</a>
+                <a href="leaderboard.html"><i class="fas fa-poll-h"></i> Leaderboard</a>
+                <a href="rulesfaq.html"> <i class="fas fa-question-circle"></i> Rules /FAQ</a>
+                <a id="login" href="#"><i class="fas fa-sign-in-alt "></i> Sign In</a>
+                <a class="hide" id="logout" href="#"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+            </nav>
+        </div>
+
+        <!--Content section-->
+        <div class="main-content">
+            <!--Background video-->
+            <video src="https://css-tricks-post-videos.s3.us-east-1.amazonaws.com/Island%20-%204141.mp4" autoplay loop
+                playsinline muted></video>
+            <div class="content">
+                <!--Main Title-->
+                <hr>
+                <h1>Registration</h1>
+                <hr>
+
+                <form id="registration-form" method="get" novalidate>
+                    <div class="form-reg">
+
+                        <div class="form-group">
+                            <label for="Tournament">Choose a Tournament ... </label>
+
+                            <select required name="tournament" id="tournament">
+                                <option value="T1">Tournament 1, 14 Dec</option>
+                                <option value="T2">Tournament 1, 16 Dec</option>
+                                <option value="T3">Tournament 1, 18 Dec</option>
+                                <option value="T4">Tournament 1, 20 Dec</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="teamcaptain">Team Captain Name</label>
+                            <input required type="text" class="form-control" id="teamcaptain"
+                                placeholder="Team Captain Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="trackeraccount">Call of Duty tracker account link</label>
+                            <input required type="url" class="form-control" id="trackeraccount"
+                                placeholder="Call of Duty tracker account link">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="streamlink">Stream Link</label>
+                            <input type="url" class="form-control" id="streamlink" placeholder="Stream Link">
+                        </div>
+
+                        <button type="submit">Validate form</button>
+                        <div class="hide" id="paypal-button-container" class="paypal"> </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+        </div>
+        <!--Footer section-->
+        <div class="footer">
+            <!--copyright text-->
+            <p>&copy; Copyright 2020 Group F</p>
+        </div>
+    </div>
+    <!--Paypal script-->
+    <script
+        src="https://www.paypal.com/sdk/js?client-id=AUBGwyy_G68wPrS7111ZEH88vjLJHh9-hHzB4O49VIKi0sLGI37R3pf3HZHPxv2ITuYRpX4QCRKXzojS"> // Required. Replace SB_CLIENT_ID with your sandbox client ID.
+        </script>
+
+
+    <script>
+        paypal.Buttons({
+            createOrder: function (data, actions) {
+                // This function sets up the details of the transaction, including the amount and line item details.
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '10.00'
+                        }
+                    }]
+                });
+            },
+            onApprove: function (data, actions) {
+                // This function captures the funds from the transaction.
+                return actions.order.capture().then(function (details) {
+                    // This function shows a transaction success message to the buyer.
+                    alert('The payment is successfully executed by ' + details.payer.name.given_name);
+
+                    //save the payment details on the database
+                    var gamerId = firebase.auth().currentUser.uid;
+                    firebase.database().ref(`/payment/${gamerId}`).push(details);
+                });
+            }
+        }).render('#paypal-button-container');
+        //This function displays Smart Payment Buttons on your web page.
+    </script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/8.2.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="/__/firebase/8.2.0/firebase-analytics.js"></script>
+    <script src="/__/firebase/8.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.2.0/firebase-database.js"></script>
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+    <script src="/script/firebase-logic.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Search Engine Optimization Tags-->
+    <meta name="title" content="Welcome to Game Time Tournaments">
+    <meta name="description" content="Call of Duty: Warzone AMATEUR TRIOS TOURNAMENT">
+    <meta name="keywords" content="Game  Tournament">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    <script src="https://kit.fontawesome.com/c633517a59.js" crossorigin="anonymous"></script>
+    <title>Tournament</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script/a-script.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/a-external.css">
+    <link rel="stylesheet" href="css/d-external.css">
+
+</head>
+
+<body>
+    <!--Main Container-->
+    <div class="container">
+        <!--Header-->
+        <div class="header">
+            <!--icon and search bar-->
+            <div class="search-bar">
+                <img class="logo" src="/images/logo.jpg" alt="Logo" />
+                <div class="search">
+                    <input class="search-control" placeholder="search" />
+                    <button class="search-control"><i class="fas fa-search "></i></button>
+                </div>
+            </div>
+            <!-- Hidden checkbox to controll the menu icon-->
+            <input type="checkbox" class="navigation-toggle" id="navigation-toggle" />
+            <!--Menu Icon-->
+            <label for="navigation-toggle" class="menu-icon">
+                <div class="first"></div>
+                <div class="middle"></div>
+                <div class="last"></div>
+            </label>
+            <!--Navigation bar-->
+            <nav class="nav">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="tournament.html"><i class="fas fa-gamepad"></i> Tournament</a>
+                <a href="registration.html"><i class="fas fa-user-plus"></i> Register</a>
+                <a href="leaderboard.html"><i class="fas fa-poll-h"></i> Leaderboard</a>
+                <a href="rulesfaq.html"> <i class="fas fa-question-circle"></i> Rules /FAQ</a>
+                <a id="login" href="#"><i class="fas fa-sign-in-alt "></i> Sign In</a>
+                <a class="hide" id="logout" href="#"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+            </nav>
+        </div>
+        <!--Content section-->
+        <div class="main-content">
+            <!--Background video-->
+            <video src="https://css-tricks-post-videos.s3.us-east-1.amazonaws.com/Island%20-%204141.mp4" autoplay loop
+                playsinline muted></video>
+                <hr>
+                <h1>TOURNAMENTS</h1>
+                <hr>
+            <!--promo pics witha button-->
+            <div class="img-cont">
+                <div class="img-wrapper">
+                    <img id="promo" src="images/trio-tourney.jpg" alt="trios pic">
+                    <a href="(regform)">click here</a>
+                    <!--what do we want to put here, maybe href to reg form?-->
+                </div>
+                <div class="img-wrapper">
+                    <img id="promo2" src="images/freeduos.jpg" alt="duos pic">
+                    <a href="(regform)">click here</a>
+                    <!--what do we want to put here, maybe href to reg form?-->
+                </div>
+            </div>
+            <p>
+            <div class="tournament-details">
+                <h2><b><i>€3000<br>Friday night<br>warzone<br>Tournament</b></i></h2>
+                </p>
+            </div>
+
+            <!--Sign up modal-->
+            <div id="signup-modal">
+                <!--close button-->
+                <a id="modal-close" href="#"><i class="fas fa-times-circle"></i></a>
+                <!--Sign up form-->
+                <form>
+                    <div class="form-container">
+                        <h2>Sign Up</h2>
+                        <button class="modal-close" id="with-google">
+                            <img src="/images/google-signin.png" alt="Sign in with Google" />
+                        </button>
+                        <p>Please fill in this form to create an account</p>
+                        <hr>
+                        <label for="email">Email</label>
+                        <input  type="email" id="email" placeholder="Enter Email" name="email" required>
+
+                        <label for="password">Password</label>
+                        <input id="password" type="password" placeholder="Enter Password" name="password" required>
+
+                        <label for="password-repeat">Repeat Password</label>
+                        <input id="password-repeat" type="password" placeholder="Repeat Password" name="password-repeat"
+                            required>
+
+                        <label>
+                            <input type="checkbox" checked="checked" name="remember">
+                            Remember me
+                        </label>
+
+                        <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">
+                                Terms & Privacy</a>
+                        </p>
+
+                        <div class="form-btn-control">
+                            <button type="button" class="btn modal-close">Cancel</button>
+                            <button id="signup" type="submit" class="btn modal-close">Sign Up</button>
+                        </div>
+                        <p class="error-message" id="error-message">Invalid input! please fix the red border</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <!--Footer section-->
+    <div class="footer">
+        <!--copyright text-->
+        <p>&copy; Copyright 2020 Group F</p>
+    </div>
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/8.2.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="/__/firebase/8.2.0/firebase-analytics.js"></script>
+    <script src="/__/firebase/8.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.2.0/firebase-database.js"></script>
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+    <script src="/script/firebase-logic.js"></script>
+</body>
+
+</html>
