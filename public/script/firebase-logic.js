@@ -82,21 +82,36 @@ if (destination.match(/registration|leaderboard/i)) {
 
 }
 
-/*
-//hide the signup modal
-$("#modal-close,.modal-close").click(function (e) {
-  e.preventDefault();
-  var destination = window.location.href;
-  if (destination.match(/registration|leaderboard/i)) {
-    const user = firebase.auth().currentUser;
-    if (!user) {
 
-      //hide with animation the modal
-      hideWithAnimation("#signup-modal", 3000);
-      window.location.href = "/index.html";
+ //hide the signup modal
+ $("#modal-close,.modal-close").click(async function (e) {
+  e.preventDefault();
+  if (e.target.id === "signup") {
+    var email = document.querySelector("#email").value;
+    var password = document.querySelector("#password").value;
+    var passwordRepeat = document.querySelector("#password-repeat").value;
+
+    try {
+      if (email && password && passwordRepeat) {
+        //validate email 
+        if (email.match(/.*@.*\..*/i)) {
+          //validate password
+          if (password === passwordRepeat && password.length >= 6) {
+           var user = await firebase.auth().createUserWithEmailAndPassword(email, password);
+          } else {
+            $("#error-message").addClass("error");
+          }
+
+        }
+      }
+    } catch (err) {
+      alert(err);
     }
 
   }
 
-})
-*/
+  //hide with animation the modal
+  hideWithAnimation("#signup-modal", 3000);
+
+});
+

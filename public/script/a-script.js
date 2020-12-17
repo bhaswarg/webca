@@ -12,13 +12,7 @@ $(document).ready(function () {
     clearInterval(countdown);
   });
 
-  //hide the signup modal
-  $("#modal-close,.modal-close").click(function (e) {
-    e.preventDefault();
-    //hide with animation the modal
-    hideWithAnimation("#signup-modal", 3000);
-
-  })
+ 
 
   //show signup modal
   $("#login").click(function (e) {
@@ -28,9 +22,12 @@ $(document).ready(function () {
     showWithAnimation("#signup-modal", 3000);
     $("#signup-modal").addClass("modal");
 
-  })
+  });
 
-  
+
+
+
+
 
 
   //Registration form validation check

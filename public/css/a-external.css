@@ -14,17 +14,7 @@
     
  }
 
-  /* Background video */
-video {
-    object-fit: cover;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    display:none;
-  }
+
 
 
  /*Main container*/
@@ -34,16 +24,26 @@ video {
     min-height: 100vh;
  }
 
-
  
+
+
+/* Search bar*/
+.search-bar{
+    position: relative; 
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
 /*logo*/
- .logo{
+.logo{
     border-radius: 50%; 
     width: 30px;
     height: 30px;
     margin: 0.5rem;
 }
-
 
 /*search box*/
 .search{
@@ -51,32 +51,35 @@ video {
     font-size: 1rem;
     align-items: center;
     margin: 0.5rem;
+    position: relative;
+    margin-right: 0.5rem;
 }
 
 /* search box controls */
 .search > button{
-     position: relative;
+    position: absolute;
      top: 0;
-     left: -2px;
-     padding: 0.5rem 0.7rem;
+     right: 0rem;
+     padding: 1rem;
      border: none;
      background-color:#003366;
      border-radius: 2px;
-     color: white;
+     color: white;  
      font-size: 1.6rem;
+    
     
 }
 
 .search > input{
-     padding: 0.5rem;
+     padding: 1rem;
      border: none;
-     border-radius: 2px;
-     font-size: 1.6rem;
+     border-radius: 2px; 
+     font-size: 1.6rem;   
+     
 }
 
 /*Navigation bar*/
 .nav{
-    position: relative;
     display: flex;
     justify-content: space-evenly;
     padding: 0.2rem;
@@ -105,20 +108,12 @@ video {
 }
 
 
- .search-bar{
-     position: relative; 
-     display: flex;
-     flex-direction: row;
-     background-color: black;
-     justify-content: space-between;
- }
-
  .main-content{
      position: relative; 
-     background-color:rgba(0, 0, 0, 0.521);
      color: white;
      flex:1;
      padding:1rem;
+     background-image:url("../images/background.jpg"),linear-gradient(90deg, rgba(2, 0, 36, 0.37) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
     
  }
 
@@ -155,6 +150,7 @@ video {
     padding:1.6rem;
     padding-top: 4.5rem;
     align-items: center;
+   flex-wrap: wrap;
 }
 
 
@@ -201,8 +197,8 @@ video {
 .menu-icon{
     position: fixed;
     display:none;
-    top:5rem;
-    right:1.6rem;
+    top:6rem;
+    right:3rem;
     background-color:#003366be;
     border-radius: 50%;
     behavior: url(PIE.htc); /* IE8 */
@@ -393,6 +389,3 @@ video {
       }
 }
 
-/*
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
-*/
