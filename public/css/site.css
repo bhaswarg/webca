@@ -16,7 +16,7 @@
     background-color: rgba(0, 0, 0, 0.598) ;
     -ms-flex-item-align: center;
         align-self: center;
-    max-height: 80vw;
+    
 }
 .form-reg button {
     margin: 1rem;
