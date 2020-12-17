@@ -1,12 +1,26 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 /*leaderboard page*/
 .bottom-content{
     font-size: 25px;
 }
 .leaderboard-content{
     overflow: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    align-items: center ;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center ;
+        -ms-flex-align: center ;
+            align-items: center ;
     background-color: rgba(0, 0, 0, 0.63);
 }
 table {
@@ -30,7 +44,9 @@ table {
   
   .img-containter{
     
-    align-content: center;
+    -ms-flex-line-pack: center;
+    
+        align-content: center;
 
   }
  .banner{
@@ -40,7 +56,8 @@ table {
 .banner h1{
     font-size: 50px;
     margin-bottom: 20px;
-    align-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
 }
 .banner h1 span{
     color: yellowgreen;
@@ -53,7 +70,8 @@ table {
     background: yellowgreen;
     font-weight: bold;
     cursor: pointer;
-    align-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
     min-width: 5vw;
 
 }
@@ -87,25 +105,45 @@ table {
     color: #d348369a;
     font-size:50px;
     background-origin: padding-box;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     border: 1px;
 }
  .img-cont{
-    align-self:center;
-    align-items: center;
+    -ms-flex-item-align:center;
+        align-self:center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 
  }/*keep div flexable in a vertical display*/
  .img-wrapper{
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+     display: -webkit-box;
+     display: -ms-flexbox;
      display: flex;
-     flex-direction:column;
+     -webkit-box-orient:vertical;
+     -webkit-box-direction:normal;
+         -ms-flex-direction:column;
+             flex-direction:column;
  }/*img dimensions*/
  .img-wrapper img{
      width: 300px;
-     object-fit: cover;
+     -o-object-fit: cover;
+        object-fit: cover;
      height: 300px;
      margin: 1rem;
      display: inline-block;/*allows for width and height to be set*/
@@ -122,56 +160,7 @@ table {
      background-color: #4CAF50;
      
  }
-/*
-   Multicoloured Hover Variations
-*/
-/*
-#social-fb:hover {
-    color: #3B5998;
-}
-#social-tw:hover {
-    color: #4099FF;
-}
-#social-gp:hover {
-    color: #d34836;
-}
-#social-em:hover {
-    color: #f39c12;
-}
-/*
-/*Contact us form*//*
-*{box-sizing: border-box;}
 
-input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
-}
-
-input[type=submit] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-/*
-.contact {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
-*/
 .rule-fq{
     padding: 1.6rem;
     background-color: rgba(0, 0, 0, 0.425);
@@ -206,10 +195,9 @@ input[type=submit]:hover {
 /*Media query for responsive design when the browser window is 670px wide or less*/
 @media only screen and (max-width: 670px) {
     .img-cont{
-       flex-direction: column;
+       -webkit-box-orient: vertical;
+       -webkit-box-direction: normal;
+           -ms-flex-direction: column;
+               flex-direction: column;
     }
 }
-
-
-
-
